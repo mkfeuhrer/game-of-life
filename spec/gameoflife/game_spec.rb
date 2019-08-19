@@ -35,4 +35,15 @@ RSpec.describe GameOfLife::Game do
       end
     end
   end
+
+  describe '#change_state' do
+    context 'when change state called' do
+      it 'returns updated state of life' do
+        new_game, new_board = create_game
+        expected_board = Array.new(5) { Array.new(5) { 0 } }
+        new_game.change_state(new_board)
+        expect(new_board.fetch_board).to match_array(expected_board)
+      end
+    end
+  end
 end
