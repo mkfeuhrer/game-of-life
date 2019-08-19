@@ -46,4 +46,14 @@ RSpec.describe GameOfLife::Game do
       end
     end
   end
+
+  describe '#count_alive_neighbours' do
+    context 'When count_alive_neighbours called' do
+      it 'returns number of live neighbours' do
+        new_game, new_board = create_game
+        new_board.update_cell(0, 0, 1)
+        expect(new_game.count_alive_neighbours(new_board, 1, 0)).to eq(1)
+      end
+    end
+  end
 end
