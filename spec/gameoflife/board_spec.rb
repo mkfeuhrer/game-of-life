@@ -58,4 +58,17 @@ RSpec.describe GameOfLife::Board do
       end
     end
   end
+
+  describe '#get_extreme_bottom' do
+    context 'when get extreme bottom is called' do
+      it 'returns bottommost column with live cell' do
+        board = GameOfLife::Board.new(5)
+        board.create_board
+        board.update_cell(3, 1, 1)
+        expect(board.fetch_extreme_bottom).to eq(3)
+        board.update_cell(4, 3, 1)
+        expect(board.fetch_extreme_bottom).to eq(4)
+      end
+    end
+  end
 end
