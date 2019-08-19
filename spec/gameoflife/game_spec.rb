@@ -56,4 +56,21 @@ RSpec.describe GameOfLife::Game do
       end
     end
   end
+
+  describe '#get_state' do
+    context 'When given alive neighbours and cell state' do
+      it 'returns correct new state of cell' do
+        new_game = GameOfLife::Game.new
+        expect(new_game.get_state(0, 0)).to eq(0)
+        expect(new_game.get_state(0, 1)).to eq(1)
+        expect(new_game.get_state(0, -1)).to eq(-1)
+        expect(new_game.get_state(2, 0)).to eq(0)
+        expect(new_game.get_state(2, 1)).to eq(0)
+        expect(new_game.get_state(3, 0)).to eq(1)
+        expect(new_game.get_state(3, 1)).to eq(0)
+        expect(new_game.get_state(4, 0)).to eq(0)
+        expect(new_game.get_state(4, 1)).to eq(1)
+      end
+    end
+  end
 end

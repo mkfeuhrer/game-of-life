@@ -22,6 +22,10 @@ Metrics/CyclomaticComplexity:
   Exclude:
     - 'lib/**/*.rb'
 
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'lib/**/*.rb'
+
 Metrics/AbcSize:
   Exclude:
     - 'lib/**/*.rb'

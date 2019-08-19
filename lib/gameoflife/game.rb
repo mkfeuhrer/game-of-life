@@ -8,6 +8,22 @@ module GameOfLife
       true
     end
 
+    def get_state(alive_neighbours, value)
+      if value == 1
+        if alive_neighbours >= 2 && alive_neighbours < 4
+          0
+        else 1
+        end
+      elsif value.zero?
+        if alive_neighbours == 3
+          1
+        else 0
+        end
+      else
+        -1
+      end
+    end
+
     def count_alive_neighbours(board, check_row, check_col)
       alive_neighbours = 0
       (-1..1).each do |row|
@@ -28,8 +44,7 @@ module GameOfLife
       (0...board.board_size).each do |row|
         (0...board.board_size).each do |col|
           alive_neighbours = count_alive_neighbours(board, row, col)
-          puts alive_neighbours
-          state = 0
+          state = get_state(alive_neighbours, board.get_cell(row, col))
           new_board[row][col] = if state == 1
                                   1 - board.get_cell(row, col)
                                 else
