@@ -5,6 +5,10 @@ module GameOfLife
       @size = size
     end
 
+    def board_size
+      @size
+    end
+
     def create_board
       @life_board = Array.new(@size) { Array.new(@size) { 0 } }
     end

@@ -21,4 +21,15 @@ RSpec.describe GameOfLife::Board do
       end
     end
   end
+
+  describe '#create_board' do
+    context 'when get board is called' do
+      it 'returns current state of life' do
+        board = GameOfLife::Board.new(5)
+        board.create_board
+        new_board = Array.new(5) { Array.new(5) { 0 } }
+        expect(board.fetch_board).to eq(new_board)
+      end
+    end
+  end
 end

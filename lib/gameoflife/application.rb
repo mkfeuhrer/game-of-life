@@ -14,6 +14,14 @@ end
 
 def start_game(board)
   board.show_board
+  game = GameOfLife::Game.new
+  puts 'Enter number of iteration game of life needs to be executed'
+  iteration_count = gets.chomp.to_i
+  while iteration_count.positive?
+    game.change_state(board)
+    board.show_board
+    iteration_count -= 1
+  end
 end
 
 def start
