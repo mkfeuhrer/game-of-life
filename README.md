@@ -54,6 +54,19 @@ After checking out the repo,
 
 - Run `ruby lib/gameoflife/application.rb`
 
+Input Instructions :
+
+- Either use predefined patterns or custom input as follows
+
+First input number (N) of live cells initially.
+Next N Lines, enter zero indexed row and column of live cells.
+Enter how many iterations(X) you want to view ?
+
+## Demo
+
+![Glider](gameoflife-glider.gif)
+
+
 ### Running Tests
 
 - Run `rake spec` to run all [RSpec][4] specs inside `spec`.

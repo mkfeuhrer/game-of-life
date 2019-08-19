@@ -26,6 +26,10 @@ Metrics/PerceivedComplexity:
   Exclude:
     - 'lib/**/*.rb'
 
+Metrics/ClassLength:
+  Exclude:
+    - 'lib/**/*.rb'
+
 Metrics/AbcSize:
   Exclude:
     - 'lib/**/*.rb'

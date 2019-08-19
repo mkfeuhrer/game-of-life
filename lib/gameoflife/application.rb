@@ -47,7 +47,13 @@ end
 
 def start
   puts 'Welcome to game of life!'
-  board = custom_input
+  puts 'Enter 1 for predefined input, 2 for custom input'
+  choice = gets.chomp.to_i
+  board = if choice == 1
+            predefined_input
+          else
+            custom_input
+          end
   start_game(board)
 end
 
