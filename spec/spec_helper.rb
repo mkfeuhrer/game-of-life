@@ -1,4 +1,4 @@
 require 'simplecov'
 SimpleCov.start
 
-require 'gameoflife'
+require 'game_of_life'
