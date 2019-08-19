@@ -1,0 +1,21 @@
+Metrics/LineLength:
+  Max: 100
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'vendor/**/*'
+  TargetRubyVersion: 2.6

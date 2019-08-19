@@ -1,0 +1,9 @@
+/coverage/
+/pkg/
+/tmp/
+/.bundle/
+/vendor/bundle
+.rvmrc
+.idea/
+.DS_Store
+Gemfile.lock
