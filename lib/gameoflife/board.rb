@@ -33,6 +33,20 @@ module GameOfLife
       puts "\033[H\033[2J"
     end
 
+    def fetch_extreme_left
+      extreme_left = @size
+      (0..@size - 1).each do |row|
+        (0..@size - 1).each do |col|
+          extreme_left = [extreme_left, col].min if @life_board[row][col] == 1
+        end
+      end
+      extreme_left
+    end
+
+    def expand_board
+      puts 'Expansion required'
+    end
+
     def show_board
       (0..@size - 1).each do |row|
         (0..@size - 1).each do |col|

@@ -55,4 +55,10 @@ module GameOfLife
       board.update_board(new_board)
     end
   end
+
+  def board_expansion_required?(board)
+    extreme_left = board.fetch_extreme_left
+    puts extreme_left
+    false
+  end
 end
