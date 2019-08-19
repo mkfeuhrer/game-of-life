@@ -13,6 +13,10 @@ module GameOfLife
       @life_board = board
     end
 
+    def fetch_board
+      @life_board
+    end
+
     def get_cell(row, col)
       @life_board[row][col]
     end
