@@ -29,13 +29,23 @@ module GameOfLife
       @life_board[row][col] = value
     end
 
+    def clear_screen
+      puts "\033[H\033[2J"
+    end
+
     def show_board
       (0..@size - 1).each do |row|
         (0..@size - 1).each do |col|
-          print @life_board[row][col]
+          if @life_board[row][col] == 1
+            print ' ▦'
+          else
+            print ' □'
+          end
         end
         puts ''
       end
+      sleep(1)
+      clear_screen
     end
   end
 end
