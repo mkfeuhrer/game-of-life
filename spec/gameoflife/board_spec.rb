@@ -84,4 +84,34 @@ RSpec.describe GameOfLife::Board do
       end
     end
   end
+
+  describe '#expand_right_bottom' do
+    context 'when expand grid is called with right or bottom side' do
+      it 'returns expanded board' do
+        board = GameOfLife::Board.new(5)
+        board.create_board
+        board.update_cell(4, 4, 1)
+        board.expand_board
+        new_board = GameOfLife::Board.new(6)
+        new_board.create_board
+        new_board.update_cell(4, 4, 1)
+        expect(board.fetch_board).to eq(new_board.fetch_board)
+      end
+    end
+  end
+
+  describe '#expand_left_top' do
+    context 'when expand grid is called with left or top side' do
+      it 'returns expanded board' do
+        board = GameOfLife::Board.new(5)
+        board.create_board
+        board.update_cell(0, 0, 1)
+        board.expand_board
+        new_board = GameOfLife::Board.new(6)
+        new_board.create_board
+        new_board.update_cell(1, 1, 1)
+        expect(board.fetch_board).to eq(new_board.fetch_board)
+      end
+    end
+  end
 end

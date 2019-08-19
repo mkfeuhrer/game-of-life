@@ -73,8 +73,32 @@ module GameOfLife
       extreme_top
     end
 
+    def expand_right_bottom
+      new_board = Array.new(@size + 1) { Array.new(@size + 1) { 0 } }
+      (0..@size - 1).each do |row|
+        (0..@size - 1).each do |col|
+          new_board[row][col] = get_cell(row, col)
+        end
+      end
+      update_board(new_board)
+    end
+
+    def expand_left_top
+      new_board = Array.new(@size + 1) { Array.new(@size + 1) { 0 } }
+      (0..@size - 1).each do |row|
+        (0..@size - 1).each do |col|
+          new_board[row + 1][col + 1] = get_cell(row, col)
+        end
+      end
+      update_board(new_board)
+    end
+
     def expand_board
-      puts 'Expansion required'
+      expand_left_top if fetch_extreme_top.zero? || fetch_extreme_left.zero?
+      if @size - fetch_extreme_bottom == 1 ||
+         @size - fetch_extreme_right == 1
+        expand_right_bottom
+      end
     end
 
     def show_board
