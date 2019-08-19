@@ -112,7 +112,7 @@ module GameOfLife
         end
         puts ''
       end
-      sleep(1)
+      sleep(0.5)
       clear_screen
     end
   end

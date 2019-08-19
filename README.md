@@ -33,8 +33,8 @@ gem install gameoflife
 
 ## Limitation
 
-- Only shows initial life state
-- No Grid Expansion
+- Throws error when out of bound
+- Not dynamically increasing size
 
 ## Development
 
@@ -60,11 +60,6 @@ After checking out the repo,
 - Run `rake lint` to run [RuboCop][5] linter.
 
 To install this gem onto your local machine, run `bundle exec rake install`.
-
-### Limitation
-
-- Currently game is of static boundaries i.e cannot expand
-
 
 [1]: https://rvm.io/
 [2]: https://github.com/rbenv/rbenv

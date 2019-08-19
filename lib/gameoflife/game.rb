@@ -56,7 +56,6 @@ module GameOfLife
     end
 
     def board_expansion_required(board)
-      puts board.fetch_extreme_left
       if board.board_size - board.fetch_extreme_bottom == 1 ||
          board.board_size - board.fetch_extreme_right == 1 ||
          board.fetch_extreme_top.zero? ||
