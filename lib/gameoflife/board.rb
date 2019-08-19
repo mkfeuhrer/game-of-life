@@ -63,6 +63,16 @@ module GameOfLife
       extreme_bottom
     end
 
+    def fetch_extreme_top
+      extreme_top = @size
+      (0..@size - 1).each do |row|
+        (0..@size - 1).each do |col|
+          extreme_top = [extreme_top, row].min if @life_board[row][col] == 1
+        end
+      end
+      extreme_top
+    end
+
     def expand_board
       puts 'Expansion required'
     end
