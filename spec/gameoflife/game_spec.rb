@@ -73,4 +73,17 @@ RSpec.describe GameOfLife::Game do
       end
     end
   end
+
+  describe '#board_expansion_required' do
+    context 'When given board input' do
+      it 'returns whether expansion is needed or not' do
+        new_game, new_board = create_game
+        new_board.update_cell(0, 0, 1)
+        expect(new_game.board_expansion_required(new_board)).to eq(true)
+        new_board.create_board
+        new_board.update_cell(4, 4, 1)
+        expect(new_game.board_expansion_required(new_board)).to eq(true)
+      end
+    end
+  end
 end

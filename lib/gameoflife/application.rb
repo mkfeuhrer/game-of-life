@@ -18,7 +18,7 @@ def start_game(board)
   puts 'Enter number of iteration game of life needs to be executed'
   iteration_count = gets.chomp.to_i
   while iteration_count.positive?
-    board.expand_board if game.board_expansion_required?(board)
+    board.expand_board if game.board_expansion_required(board)
     game.change_state(board)
     board.show_board
     iteration_count -= 1
