@@ -43,6 +43,16 @@ module GameOfLife
       extreme_left
     end
 
+    def fetch_extreme_right
+      extreme_right = 0
+      (0..@size - 1).each do |row|
+        (0..@size - 1).each do |col|
+          extreme_right = [extreme_right, col].max if @life_board[row][col] == 1
+        end
+      end
+      extreme_right
+    end
+
     def expand_board
       puts 'Expansion required'
     end

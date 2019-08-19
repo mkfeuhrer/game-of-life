@@ -45,4 +45,17 @@ RSpec.describe GameOfLife::Board do
       end
     end
   end
+
+  describe '#get_extreme_right' do
+    context 'when get extreme right is called' do
+      it 'returns rightmost column with live cell' do
+        board = GameOfLife::Board.new(5)
+        board.create_board
+        board.update_cell(1, 3, 1)
+        expect(board.fetch_extreme_right).to eq(3)
+        board.update_cell(2, 4, 1)
+        expect(board.fetch_extreme_right).to eq(4)
+      end
+    end
+  end
 end
