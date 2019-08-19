@@ -31,6 +31,11 @@ Or install it yourself as:
 gem install gameoflife
 ```
 
+## Limitation
+
+- Only shows initial life state
+- No Grid Expansion
+
 ## Development
 
 ### Prerequisites
@@ -44,6 +49,10 @@ After checking out the repo,
 
 - Run `rvm use` or `rbenv local` to switch to the configured Ruby version for this project.
 - Run `bundle install --path vendor/bundle` to install dependencies.
+
+### Run Instructions
+
+- Run `ruby lib/gameoflife/application.rb`
 
 ### Running Tests
 
