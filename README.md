@@ -33,8 +33,7 @@ gem install gameoflife
 
 ## Limitation
 
-- Throws error when out of bound
-- Not dynamically increasing size
+- Throws error when memory limit exceeded.
 
 ## Development
 

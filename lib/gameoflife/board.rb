@@ -15,6 +15,7 @@ module GameOfLife
 
     def update_board(board)
       @life_board = board
+      @size = board.length
     end
 
     def fetch_board
@@ -112,7 +113,7 @@ module GameOfLife
         end
         puts ''
       end
-      sleep(0.5)
+      sleep(0.2)
       clear_screen
     end
   end
